@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Acada Learning, Calgary, Canada Office.</h1>
-<h1 align="center">We are developing and supporting quality Software Solutions to millions of clients.
+<h1 align="center">We are truly developing and supporting quality Software Solutions to millions of clients.
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance. God Loves you. We will all get multiple jobs. Thank you Lord. Amen and amen</h1>
 <hr>
 <br>
