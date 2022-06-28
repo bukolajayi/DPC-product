@@ -1,23 +1,27 @@
-node{
-    def MHD = tool name: "maven3.8.4"
-    stage('code'){
-        git branch: 'development', url: 'https://github.com/team16flight/web-app.git'
-    }
-    stage('BUILD'){
-       sh "${MHD}/bin/mvn clean package"
- 
-    }
-    /*
-    stage('deploy'){
-  sshagent(['tomcat']) {
-  sh "scp -o StrictHostKeyChecking=no target/*war ec2-user@172.31.15.31:/opt/tomcat9/webapps/"
+@Library('bukola_library') _
+pipeline{
+  agent any
+  tools {
+    maven "maven 3.8.4"
+  }
+stages{
+  stage('CheckoutCode'){
+    steps{
+    git 'https://github.com/bukolajayi/web-app.git'
+  }
+}
+stage('Build'){
+  steps{
+    common("Build")
+  }
+}
+/*
+stage('ExecuteCodequality'){
+  steps{
+    common("SonarQube Report")
 }
 }
-stage('email'){
-emailext body: '''Build is over
-
-Acada
-437212483''', recipientProviders: [developers(), requestor()], subject: 'Build', to: 'tdapp@gmail.com'
-}
-    */
-}
+stage('Backup'){
+  steps{
+    common("Upload Into Nexus")
+*/
