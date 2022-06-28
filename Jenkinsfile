@@ -24,4 +24,8 @@ stage('ExecuteCodequality'){
 stage('Backup'){
   steps{
     common("Upload Into Nexus")
+}
+}
 */
+}
+}
